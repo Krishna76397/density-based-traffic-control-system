@@ -1,75 +1,30 @@
-[README.md](https://github.com/user-attachments/files/22125666/README.md)
-# 🚦 Traffic Density Controller
+# Traffic Density Controller - Java Simulation
 
-This project is a **Java-based simulation of a density-based traffic control system**.  
-It mimics how traffic signals can adapt to vehicle density using **IR sensor logic**.
+This Java project simulates the density-based traffic control logic (the Arduino sketch translated to Java).
+It is designed to run in **VS Code** (or any Java IDE / command line).
 
----
-
-## 📌 Project Overview
-- Detects traffic density using **simulated IR sensors**.  
-- Assigns **green light priority** to roads with more vehicles.  
-- Supports multiple modes:  
-  - **Basic switching**  
-  - **Priority-based control**  
-  - **Timer-based with override**  
-  - **GUI simulation using Swing**  
-
----
-
-## 🛠️ Technologies Used
-- **Java** (core simulation + GUI).  
-- **IR sensors (simulated in code)** for vehicle detection.  
-- **LEDs (simulated in console/GUI)** for traffic lights.  
-
----
-
-## 📂 Project Structure
+## Project structure
 ```
-traffic-density-controller/
-└── java-code/
-    ├── TrafficControlBasic.java
-    ├── TrafficControlPriority.java
-    ├── TrafficControlTimer.java
-    └── TrafficControlGUI.java
+traffic-density-controller-java/
+└── src/
+    └── traffic/
+        ├── TrafficControllerJava.java
+        └── SensorSimulator.java
 ```
 
----
-
-## ▶️ How to Run
-1. Clone this repository:
+## How to run (from project root)
+1. Compile:
    ```bash
-   git clone https://github.com/your-username/traffic-density-controller.git
-   cd traffic-density-controller/java-code
+   javac -d out -sourcepath src src/traffic/TrafficControllerJava.java src/traffic/SensorSimulator.java
+   ```
+2. Run:
+   ```bash
+   java -cp out traffic.TrafficControllerJava
    ```
 
-2. Compile any version, e.g.:
-   ```bash
-   javac TrafficControlBasic.java
-   java TrafficControlBasic
-   ```
+Or using VS Code:
+- Open the folder `traffic-density-controller-java` in VS Code.
+- Ensure you have a JDK and Java extension pack installed.
+- Compile & run `TrafficControllerJava` using the Run Code command or the built-in debugger.
 
-3. Run GUI version:
-   ```bash
-   javac TrafficControlGUI.java
-   java TrafficControlGUI
-   ```
-
----
-
-## 📊 Sample Output (Console Version)
-```
-Traffic Light Status:
-Road1: GREEN
-Road2: RED
-Road3: RED
-Road4: RED
------------------------------
-```
-
--- 
-
----
-
-## 📜 License
-This project is open-source under the **MIT License**.
+You can modify `SensorSimulator` to read from serial/USB if you want to connect to a real Arduino.
