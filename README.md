@@ -22,9 +22,3 @@ traffic-density-controller-java/
    java -cp out traffic.TrafficControllerJava
    ```
 
-Or using VS Code:
-- Open the folder `traffic-density-controller-java` in VS Code.
-- Ensure you have a JDK and Java extension pack installed.
-- Compile & run `TrafficControllerJava` using the Run Code command or the built-in debugger.
-
-You can modify `SensorSimulator` to read from serial/USB if you want to connect to a real Arduino.
